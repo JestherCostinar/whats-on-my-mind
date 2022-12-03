@@ -65,7 +65,11 @@ class IdeaController extends Controller
      */
     public function edit(Idea $idea)
     {
-        //
+        $this->authorize('update', $idea);
+
+        return view('idea.edit', [
+            'chirp' => $idea,
+        ]);
     }
 
     /**
@@ -77,7 +81,15 @@ class IdeaController extends Controller
      */
     public function update(Request $request, Idea $idea)
     {
-        //
+        $this->authorize('update', $idea);
+
+        $validated = $request->validate([
+            'message' => 'required|string|max:255',
+        ]);
+
+        $idea->update($validated);
+
+        return redirect(route('idea.index'));
     }
 
     /**
@@ -88,6 +100,10 @@ class IdeaController extends Controller
      */
     public function destroy(Idea $idea)
     {
-        //
+        $this->authorize('delete', $idea);
+
+        $idea->delete();
+
+        return redirect(route('idea.index'));
     }
 }
