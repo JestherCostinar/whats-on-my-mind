@@ -1,6 +1,6 @@
 <h1 align="center">What's on my mind💡</h1>
 
-![image](https://user-images.githubusercontent.com/56688615/205463761-65735739-1bff-459b-af51-821099d17ac7.png)
+![image](https://user-images.githubusercontent.com/56688615/205464164-52698ffb-e149-41a0-93bf-559c3bf807da.png)
 
 ## Programming Languages and Framework:
 
