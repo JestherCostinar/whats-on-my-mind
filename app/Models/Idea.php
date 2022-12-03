@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Events\IdeaCreated;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,6 +12,10 @@ class Idea extends Model
 
     protected $fillable = [
         'message'
+    ];
+
+    protected $dispatchesEvents = [
+        'created' => IdeaCreated::class,
     ];
 
     public function user() {
